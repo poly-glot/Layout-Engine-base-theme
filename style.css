@@ -1,0 +1,114 @@
+/*
+Theme Name: Layout Engine Base
+Theme URI: http://simpleux.co.uk/plugins/wordpress/layout-engine/
+Author: Junaid Ahmed
+Author URI: http://www.simpleux.co.uk
+Description: Child theme of Twenty Eleven designed in drag and drop; LessCSS compatible Layout Engine framework which gives you freedom to alter any layout in WordPress template hierarchy, simplified widget administration and unlimited sidebar.
+Version: 1.1
+License: GNU General Public License v3 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
+Tags: layout-engine,dark, light, white, black, gray, one-column, two-columns, three-columns, left-sidebar, right-sidebar, fixed-width, flexible-width, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready
+Template: twentyeleven
+*/
+
+@import url("../twentyeleven/style.css");
+@import 'grid.css';
+[class*="span"] {
+  clear: none;
+  min-height: 5px;
+}
+.widget ul {
+  list-style: none;
+}
+.widget ul ul {
+  list-style: square;
+}
+div.row {
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+}
+#branding {
+  border-top: none;
+}
+#branding div.row {
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+#branding hgroup {
+  padding-top: 20px;
+  margin: 0 0 20px 0;
+}
+#site-titlex a {
+  color: #111111;
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 36px;
+  text-decoration: none;
+}
+.singular .hentry {
+  padding: 18px 0 0 0;
+  margin: 0;
+}
+.singular .entry-header .entry-meta {
+  top: 20px;
+}
+.singular .entry-header,
+.singular .entry-content,
+.singular footer.entry-meta,
+.singular #comments-title {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.singular .entry-meta .edit-link a {
+  display: none;
+}
+body {
+  background-color: #f1f1f1;
+  color: #373737;
+  font-family: Arial, Helvetica, sans-serif;
+}
+a {
+  color: #1982d2;
+}
+h1,
+h2,
+h3,
+h4,
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+.entry-title,
+.entry-title a {
+  color: #202020;
+}
+#page {
+  width: auto;
+  max-width: 1170px;
+}
+#access div,
+#access ul {
+  margin: 0;
+}
+#colophon {
+  border-top: 1px solid #DDDDDD;
+  background: #F9F9F9;
+  padding-top: 20px;
+}
+.singular #content,
+.left-sidebar.singular #content {
+  margin: 0;
+}
+.singular.page .hentry {
+  padding: 0;
+}
+.singular.page .hentry {
+  padding: 0;
+}
+.hentry,
+.no-results,
+#content {
+  margin: 0;
+  padding: 0;
+}

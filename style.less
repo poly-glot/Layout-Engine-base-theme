@@ -1,0 +1,265 @@
+/*
+Theme Name: Layout Engine Base
+Theme URI: http://simpleux.co.uk/plugins/wordpress/layout-engine/
+Author: Junaid Ahmed
+Author URI: http://www.simpleux.co.uk
+Description: Child theme of Twenty Eleven designed in drag and drop; LessCSS compatible Layout Engine framework which gives you freedom to alter any layout in WordPress template hierarchy, simplified widget administration and unlimited sidebar.
+Version: 1.0
+License: GNU General Public License v3 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
+Tags: dark, light, white, black, gray, one-column, two-columns, three-columns, left-sidebar, right-sidebar, fixed-width, flexible-width, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready
+Template: twentyeleven
+*/
+
+@import url("../twentyeleven/style.css");
+@import 'grid.css';
+
+
+/*
+	Demonstrate different options we can define through css
+	also check modify_le_lesscss_settings() in functions.php to see how you can manipulate these settings using php.
+	Value defined in lesscss act as default value.
+	Remember parser only parse /*** style comments as demonstrated below
+	
+	An annoated variable can have following properties
+	label 			- Label of the field
+	id    			- Name of variable like @name
+	description		- Description of field. (Not implemented yet)
+	group			- Default is 'default'
+	choices			- Comma delimited values. (On server side hook you can provide arrays)
+	type			- Input type. Default is 'text'. supported values  text, radio, checkbox,color,textarea and image.
+	priority   		- priority in rendering. default is 0
+*/
+
+
+/***
+Label:Background color
+type:color
+group: Typography
+***/
+@color-scheme: rgb(241,241,241);
+
+/***
+Label:Text color
+type:color
+group: Typography
+***/
+@text-color: rgb(55,55,55);
+
+/***
+Label:Link Color
+type:color
+group: Typography
+***/
+@link-color: rgb(25,130,210);
+
+/***
+Label:Heading Color
+type:color
+group: Typography
+***/
+@heading-color: rgb(32,32,32);
+
+
+/***
+Label:Font family
+type:radio
+group: Typography
+***/
+@theme-font: Arial, Helvetica, sans-serif;
+
+/***
+Label:Homepage default header
+type:image
+group: Header
+***/
+@default-header: 'http://';
+
+//Demonstrating non-css values to use as wordpress settings in header.php
+
+/***
+Label:Facebok
+type:text
+group: Social Networks
+***/
+@social-facebook: 'http://';
+
+/***
+Label:Twitter
+type:text
+group: Social Networks
+***/
+@social-twitter: 'http://';
+
+
+/***
+Label:RSS
+type:text
+group: Social Networks
+***/
+@social-rss: 'http://';
+
+
+/***
+Label:Checkbox Test
+type:checkbox
+group: Demonstration
+choices: One,Two,Three,Four
+***/
+@test-checkbox: One;
+
+
+/***
+Label:Select Test
+type:select
+group: Demonstration
+choices: One,Two,Three,Four
+***/
+@test-select:Two;
+
+
+
+
+
+//Static
+//Fix for Bootstrap grid
+[class*="span"]
+{
+	clear:none;
+	min-height:5px;
+}
+
+.widget ul
+{
+	list-style:none;
+}
+
+.widget ul ul
+{
+	list-style:square;
+}	
+
+div.row
+{
+	margin-bottom:15px;
+	padding-bottom:15px;
+}
+
+#branding
+{
+	border-top:none;
+}
+
+#branding div.row
+{
+	margin-bottom:0px;
+	padding-bottom:0px;
+}
+
+#branding hgroup
+{
+	padding-top:20px;
+	margin:0 0 20px 0;
+}
+
+
+#site-titlex a
+{
+    color: #111111;
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 36px;
+    text-decoration: none;	
+}
+
+.singular .hentry
+{
+	padding:18px 0 0 0;
+	margin:0;
+}
+
+.singular .entry-header .entry-meta
+{
+	top:20px;
+}
+
+.singular .entry-header, .singular .entry-content, .singular footer.entry-meta, .singular #comments-title
+{
+	width:100%;
+	margin:0;
+	padding:0;
+}
+
+.singular .entry-meta .edit-link a
+{
+	display:none;
+}
+
+//Applying LessCSS
+body
+{
+	background-color:@color-scheme;
+	color:@text-color;
+	font-family:@theme-font;
+}	
+
+a
+{
+	color:@link-color;
+}
+
+h1,
+h2,
+h3,
+h4,
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+.entry-title,
+.entry-title a
+{
+	color:@heading-color;
+}
+
+#page
+{
+	width:auto;
+	max-width:1170px;
+}
+
+#access div,
+#access ul
+{
+	margin:0;
+}
+
+#colophon
+{
+	border-top:1px solid #DDDDDD;
+	background:#F9F9F9;
+	padding-top:20px;
+}
+
+.singular #content, .left-sidebar.singular #content
+{
+	margin:0;	
+}
+
+.singular.page .hentry
+{
+	padding:0;	
+}
+
+
+.singular.page .hentry
+{
+	padding:0;	
+}
+
+.hentry, .no-results,
+#content
+{
+	margin:0;
+	padding:0;
+}
